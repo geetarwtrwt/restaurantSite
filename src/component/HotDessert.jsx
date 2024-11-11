@@ -29,7 +29,7 @@ let hotDessertData = [
 let HotDessert = () => {
   return (
     <>
-      <section className="py-14">
+      <section className="py-20">
         <motion.div
           variants={staggerSlide}
           initial="offscreen"
@@ -38,19 +38,20 @@ let HotDessert = () => {
         >
           <motion.h3
             variants={slideUp}
-            className="text-center pb-4 text-3xl font-semibold text-darkGreen"
+            className="text-center pb-4 text-4xl font-semibold font-leagueGothic uppercase tracking-widest text-darkGreen"
           >
             Hot Desserts
           </motion.h3>
 
-          <div className="flex flex-col items-center justify-between md:flex-row gap-8">
+          <div className="flex flex-row items-center justify-between gap-6 max-sm:flex-col max-sm:gap-10">
             {hotDessertData.map((e) => {
               return (
                 <motion.div
                   variants={slideUp}
                   key={e.id}
-                  className="group flex gap-4 items-center shadow-lg p-2 px-4 rounded-xl"
+                  className="group flex flex-row gap-4 items-center shadow-lg p-2 px-4 rounded-xl max-md:flex-col max-sm:flex-row"
                 >
+                  {/* md:flex-row  */}
                   <img
                     className="w-24 group-hover:scale-125 group-hover:rotate-90  duration-[0.5s]"
                     src={e.url}

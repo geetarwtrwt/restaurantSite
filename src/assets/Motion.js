@@ -85,7 +85,10 @@ let imgBg = {
   },
   onscreen: {
     opacity: 1,
-    transition: 0.6
+    transition: {
+      duration: 0.4,
+      delay: 0.4
+    }
   },
 };
 
@@ -104,14 +107,14 @@ let imgAni = {
     }
   },
   hover: {
-    x: 20,
-    y: -20,
+    x: 30,
+    y: -30,
     scale: 1.2,
     rotate: 15,
     transition: {
       duration: 0.8,
       scale: {
-        duration: 0.5
+        duration: 0.8
       }
     },
   },

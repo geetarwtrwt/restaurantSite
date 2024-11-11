@@ -1,39 +1,52 @@
 import React from "react";
 import BannerImg from "../assets/banner.png";
 import { motion } from "framer-motion";
-import { imgBg, imgAni, slideUp } from "../assets/Motion";
+import { imgBg, imgAni, staggerSlide, slideUp } from "../assets/Motion";
 let Banner = () => {
   return (
     <>
-      <section className="py-14">
+      <section className="py-20">
         <div className="container ">
-          <div className="flex items-center justify-between flex-col md:flex-row">
-            <div className="relative">
+          <div className="flex items-center gap-16 justify-between flex-row max-md:flex-col">
+            <div className="relative flex justify-center w-2/5 max-md:w-full">
               <motion.img
                 variants={imgAni}
                 initial="offscreen"
                 whileInView="onscreen"
                 whileHover="hover"
-                className="max-w-[300px] z-10"
+                className="max-w-[280px] relative z-10 dropShadow-3xl max-mobile:w-[220px]"
                 src={BannerImg}
               />
-              <div className="absolute w-80 h-80	bg-lightYellow top-0 rounded-full -z-10	"></div>
+              <motion.div
+                variants={imgBg}
+                initial="offscreen"
+                whileInView="onscreen"
+                className="absolute w-80 h-80 -z-0	bg-lightYellow top-2/4 left-2/4 -translate-x-2/4 -translate-y-2/4 rounded-full max-mobile:w-[260px] max-mobile:h-[260px]"
+              ></motion.div>
             </div>
 
-            <div className="space-y-5">
-              <h2 className="text-3xl font-bold uppercase font-league">
+            <motion.div
+              variants={staggerSlide}
+              initial="offscreen"
+              whileInView="onscreen"
+              className="space-y-5 w-3/5 max-md:w-full max-md:flex flex-col items-center text-center"
+            >
+              <motion.h2
+                variants={slideUp}
+                className="text-4xl font-bold uppercase font-league max-md:text-[31px]"
+              >
                 the best yummy food in the town
-              </h2>
-              <p>
+              </motion.h2>
+              <motion.p variants={slideUp} className="max-md:text-xl">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores
                 dicta autem sit est explicabo dolorem?
-              </p>
-              <div>
+              </motion.p>
+              <motion.div variants={slideUp}>
                 <button className="bg-darkGreen text-white capitalize px-6 py-1.5 rounded-full">
                   order now
                 </button>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>

@@ -6,6 +6,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens:{
+        mobile:"481px",
+        xs:"320px",
+      },
       colors: {
         lightYellow: "#f6d876",
         white2: "#fffbf2",
